@@ -28,7 +28,7 @@ ADR 작성 (질문별 옵션 비교 → 결정 + 근거)
     ↓
 LLD final (ADR 결론 조립, 언어·프레임워크 독립)
     ↓
-Validation (4관점 시나리오 + 판정)
+Validation (5관점 시나리오 + 판정)
     ↓
 🛑 Human Review (카테고리 승격 권한은 사람에게만)
     ↓
@@ -45,7 +45,7 @@ Validation (4관점 시나리오 + 판정)
 
 skeleton은 **"원래 뭘 몰랐는지"** 를 기록한다. final만 있으면 이미 결정된 것처럼 보여서 놓친 질문을 발견하기 어렵다.
 
-리뷰의 핵심은 기계적 대조가 아니라 **"skeleton 작성 시점에 발견하지 못한 질문"을 사람이 잡아내는 것**이다:
+에이전트의 점검은 기계적 대조에 그치지 않고 **skeleton 작성 시점에 발견하지 못한 질문**까지 찾는다. final LLD 이전의 이 점검은 별도 Human Review가 아니다. 사람의 필수 검토는 Validation 뒤에 모으며, 입력 모순이 있으면 그보다 먼저 보고하고 멈춘다.
 
 ```
 skeleton: Open Questions 4개 나열
@@ -53,7 +53,7 @@ ADR:      4개 작성
     ↓
 리뷰 4-1 (AI): skeleton의 Open Questions vs ADR 1:1 대조 → 누락 없음
     ↓
-리뷰 4-2 (사람): "더 필요한 질문은 없나?"
+리뷰 4-2 (AI): "더 필요한 질문은 없나?"
   ├── skeleton에 적지 못한 질문이 있는가?
   ├── ADR 결론을 보니 새로운 질문이 드러나는가?
   └── 추가 질문이 있다면 → ADR 단계로 돌아감
@@ -110,7 +110,7 @@ adr/0004-admin-bulk-hide.md             → Decision: review 테이블에 is_hid
 
 리뷰:
   4-1 (AI) : Q1~Q4 ↔ ADR-0001~0004, 누락 없음
-  4-2 (사람): ADR-0003를 보니 "신고자 식별 정보도 함께 보존해야 하나?"가 드러남
+  4-2 (AI) : ADR-0003를 보니 "신고자 식별 정보도 함께 보존해야 하나?"가 드러남
              → Open Question Q5 추가, ADR-0005 작성 후 다시 올라옴
 
 lld/final/comment-report.md:
